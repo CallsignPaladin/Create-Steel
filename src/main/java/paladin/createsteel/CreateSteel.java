@@ -42,7 +42,7 @@ public class CreateSteel {
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "createsteel" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    public static final RegistryObject<Block> STEEL_BLOCK = BLOCKS.register("steel_block",() -> new Block(Block.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).noOcclusion()));
+    public static final RegistryObject<Block> STEEL_BLOCK = BLOCKS.register("steel_block",() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(Blocks.IRON_BLOCK.defaultDestroyTime())));
     public static final RegistryObject<Item> STEEL_BLOCK_ITEM = ITEMS.register("steel_block",() -> new BlockItem(STEEL_BLOCK.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot", () -> new Item(new Item.Properties()));
